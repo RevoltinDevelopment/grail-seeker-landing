@@ -365,6 +365,19 @@
         </div>
     </div>
 
+    <!-- Hidden forms for Netlify detection -->
+    <form name="early-access" netlify netlify-honeypot="bot-field" hidden>
+        <input type="email" name="email" />
+        <input type="text" name="collecting_focus" />
+    </form>
+
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="subject" />
+        <textarea name="message"></textarea>
+    </form>
+
     <!-- Scripts -->
     <script src="script.js"></script>
 </body>
