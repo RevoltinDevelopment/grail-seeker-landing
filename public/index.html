@@ -76,7 +76,10 @@
                     <div class="form-card">
                         <h3>Get Early Access</h3>
                         <p>Be among the first collectors to access Grail Seeker</p>
-                        <form id="early-access-form" class="signup-form" name="early-access" method="POST" netlify>
+                        <form id="early-access-form" class="signup-form" name="early-access" method="POST" netlify netlify-honeypot="bot-field">
+                            <p style="display: none;">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email address</label>
                                 <input
@@ -289,7 +292,10 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contact-form" name="contact" method="POST" netlify>
+                    <form id="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field">
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
                         <div class="form-group">
                             <label for="contact-name" class="form-label">Name</label>
                             <input type="text" id="contact-name" name="name" required class="form-input">
