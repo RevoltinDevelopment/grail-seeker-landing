@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional SMS notification service for serious comic collectors. Get alerted when your grail comics become available on eBay and major auction platforms.">
+    <meta name="keywords" content="comic book collection, grail comics, eBay alerts, comic notifications, CGC comics, comic collecting">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Grail Seeker - Stop searching. Start finding your grail comics.">
+    <meta property="og:description" content="Professional SMS notifications when your most wanted comic books become available on major auction platforms.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grailseeker.io">
+
+    <title>Grail Seeker - Professional Comic Book Discovery Platform</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Analytics -->
+    <!-- Google Analytics will be added here -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.svg" alt="Grail Seeker" class="logo" width="180" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#early-access" class="nav-link cta-link">Get Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Stop searching.<br>
+                        <span class="hero-highlight">Start finding</span> your grail comics.
+                    </h1>
+                    <p class="hero-description">
+                        Professional SMS notification service for serious comic collectors.
+                        Get alerted within minutes when your most wanted books become available
+                        on eBay, Heritage Auctions, and other major platforms.
+                    </p>
+                    <div class="hero-benefits">
+                        <div class="benefit">
+                            <span class="benefit-text">Professional service for serious collectors</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-text">Stop manual searching across 10+ platforms</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-text">Focus on rare and high-value books</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-text">Join collectors who never miss their grails</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-form" id="early-access">
+                    <div class="form-card">
+                        <h3>Get Early Access</h3>
+                        <p>Be among the first collectors to access Grail Seeker</p>
+                        <form id="early-access-form" class="signup-form" name="early-access" method="POST" data-netlify="true">
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    required
+                                    class="form-input"
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="collecting-focus" class="form-label">What do you collect? (Optional)</label>
+                                <input
+                                    type="text"
+                                    id="collecting-focus"
+                                    name="collecting_focus"
+                                    placeholder="e.g., Silver Age Marvel, CGC 9.6+ books"
+                                    class="form-input"
+                                >
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Join the Waitlist</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <p class="form-note">
+                                Beta launching Q2 2026. No spam, unsubscribe anytime.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Grail Seeker Works</h2>
+                <p>Three simple steps to never miss your grail books again</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="#2563EB" stroke-width="2"/>
+                            <path d="M16 24L20 28L32 16" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Set Your Criteria</h3>
+                    <p>
+                        Specify exact comics, grades (CGC/CBCS), price limits, and condition requirements.
+                        Support for pedigree collections, signature series, and investment-grade specifications.
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="#2563EB" stroke-width="2"/>
+                            <path d="M24 8V16M24 32V40M8 24H16M32 24H40" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>We Monitor Continuously</h3>
+                    <p>
+                        Our system watches eBay, Heritage Auctions and other major platforms daily.
+                        Advanced algorithms ensure you only get relevant, high-quality matches.
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="#2563EB" stroke-width="2"/>
+                            <path d="M24 16V24L30 30" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Get Instant Alerts</h3>
+                    <p>
+                        Receive SMS notifications within 30 minutes of discovery.
+                        Direct links to listings, complete book details, and seller information included.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Market Section -->
+    <section class="target-market">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h2>Built for Serious Collectors</h2>
+                    <p class="lead">
+                        Grail Seeker serves dedicated comic collectors who understand that timing
+                        is everything when rare books surface on the market.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <h4>High-Value Focus</h4>
+                            <p>Perfect for collectors seeking golden age books, pedigree collections, high-grade CGC, and investment-grade comics typically valued at $500-$50,000+.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Expert-Level Criteria</h4>
+                            <p>Advanced filtering for page quality (White, Off-White to White), specific pedigrees (Mile High, Pacific Coast), and signature authentication.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Market Intelligence</h4>
+                            <p>Built-in understanding of comic market dynamics, grading standards, and collector terminology that general tools miss.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <div class="testimonial-preview">
+                        <blockquote>
+                            "Some of these books are very rare in high grade. We're talking 'only 4 or 5 in the world' rare. If you want get books like this, you've got to find them before the other guy does."
+                        </blockquote>
+                        <cite>— Serious Collector, CGC Community</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Integration Section -->
+    <section class="platforms">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Marketplace Coverage</h2>
+                <p>Monitor all major comic auction platforms from one dashboard</p>
+            </div>
+            <div class="platform-grid">
+                <div class="platform">
+                    <div class="platform-logo">eBay</div>
+                    <p>World's largest marketplace for comic books with thousands of new listings daily</p>
+                </div>
+                <div class="platform">
+                    <div class="platform-logo">Heritage</div>
+                    <p>Premier auction house for high-value comics and investment-grade collectibles</p>
+                </div>
+                <div class="platform">
+                    <div class="platform-logo">ComicConnect</div>
+                    <p>Specialized platform for rare and vintage comics with expert authentication</p>
+                </div>
+                <div class="platform coming-soon">
+                    <div class="platform-logo">+ More</div>
+                    <p>Additional platforms added regularly based on collector feedback</p>
+                    <span class="badge">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <div class="container">
+            <div class="timeline">
+                <h2>Launch Timeline</h2>
+                <div class="timeline-items">
+                    <div class="timeline-item current">
+                        <div class="timeline-icon"></div>
+                        <div class="timeline-content">
+                            <h4>Now: Early Access Signup</h4>
+                            <p>Join the waitlist and help shape the product with your feedback</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"></div>
+                        <div class="timeline-content">
+                            <h4>Q2 2026: Private Beta</h4>
+                            <p>Invite-only testing with 50 serious collectors from the community</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"></div>
+                        <div class="timeline-content">
+                            <h4>Q3 2026: Public Launch</h4>
+                            <p>Full platform availability with all marketplace integrations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>
+                        Questions about Grail Seeker? Interested in partnerships or business development?
+                        We'd love to hear from serious collectors and industry professionals.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h4>Business Inquiries</h4>
+                            <p><a href="mailto:partnerships@grailseeker.io">partnerships@grailseeker.io</a></p>
+                        </div>
+                        <div class="contact-method">
+                            <h4>General Questions</h4>
+                            <p><a href="mailto:hello@grailseeker.io">hello@grailseeker.io</a></p>
+                        </div>
+                        <div class="contact-method">
+                            <h4>Press & Media</h4>
+                            <p><a href="mailto:press@grailseeker.io">press@grailseeker.io</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">Name</label>
+                            <input type="text" id="contact-name" name="name" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">Email</label>
+                            <input type="email" id="contact-email" name="email" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject" class="form-label">Subject</label>
+                            <select id="contact-subject" name="subject" required class="form-input">
+                                <option value="">Select a topic</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="beta">Beta Testing Interest</option>
+                                <option value="general">General Question</option>
+                                <option value="press">Press/Media</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" required class="form-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.svg" alt="Grail Seeker" class="logo" width="160" height="36">
+                    <p>Professional comic book discovery platform for serious collectors.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#early-access">Early Access</a>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="#contact">Contact</a>
+                        <a href="mailto:partnerships@grailseeker.io">Partnerships</a>
+                        <a href="mailto:press@grailseeker.io">Press</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <a href="#" target="_blank">CGC Boards</a>
+                        <a href="#" target="_blank">Comic Collectors</a>
+                        <a href="mailto:hello@grailseeker.io">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Grail Seeker. All rights reserved.</p>
+                <p>Beta launching Q2 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h3>Thank you!</h3>
+            <p>You've been added to our early access list. We'll be in touch soon with beta testing details.</p>
+            <button id="close-modal" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

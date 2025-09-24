@@ -1,0 +1,23 @@
+{
+  "name": "grail-seeker-landing",
+  "version": "1.0.0",
+  "description": "Professional comic book discovery platform landing page",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "comic books",
+    "grail comics",
+    "eBay alerts",
+    "comic collecting",
+    "CGC comics"
+  ],
+  "author": "Grail Seeker",
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

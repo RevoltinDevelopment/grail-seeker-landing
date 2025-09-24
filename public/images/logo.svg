@@ -1,0 +1,36 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo: Clean, professional wordmark for Grail Seeker -->
+
+  <!-- Icon Element: Stylized search/target symbol -->
+  <g transform="translate(8, 8)">
+    <!-- Outer circle -->
+    <circle cx="12" cy="12" r="10" stroke="#2563EB" stroke-width="2" fill="none"/>
+
+    <!-- Inner target circles -->
+    <circle cx="12" cy="12" r="6" stroke="#2563EB" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <circle cx="12" cy="12" r="2" fill="#2563EB"/>
+
+    <!-- Search element -->
+    <path d="m20 20 2 2" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark: GRAIL SEEKER -->
+  <g transform="translate(40, 0)">
+    <!-- GRAIL -->
+    <text x="0" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#111827">
+      GRAIL
+    </text>
+
+    <!-- SEEKER -->
+    <text x="0" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#6B7280">
+      SEEKER
+    </text>
+  </g>
+
+  <!-- Alternative text-only version for smaller sizes -->
+  <g transform="translate(40, 0)" style="display: none;">
+    <text x="0" y="24" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#111827">
+      Grail Seeker
+    </text>
+  </g>
+</svg>
