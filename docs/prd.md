@@ -15,7 +15,7 @@ Why are# Grail Seeker Product Requirements Document (PRD)
 
 Serious comic book collectors face a critical discovery problem that costs them both time and irreplaceable opportunities. The current ecosystem forces collectors into reactive, manual workflows across 10+ fragmented marketplaces (eBay, Heritage Auctions, ComicLink, etc.), where grail books appear and disappear within 24-48 hours while collectors waste hours daily on manual checking.
 
-Grail Seeker addresses this fundamental inefficiency by shifting from "check when you remember" reactive browsing to "we'll alert you immediately" proactive monitoring. Unlike existing tools like GoCollect that focus on passive price tracking, Grail Seeker delivers speed-optimized SMS alerts within 2-5 minutes of listing detection, solving the core pain point that prevents collectors from acquiring books that may not resurface for years or decades.
+Grail Seeker addresses this fundamental inefficiency by shifting from "check when you remember" reactive browsing to "we'll alert you immediately" proactive monitoring. Unlike existing tools like GoCollect that focus on passive price tracking, Grail Seeker delivers optimized SMS alerts within 30 minutes of listing detection during twice-daily monitoring windows, solving the core pain point that prevents collectors from acquiring books that may not resurface for years or decades.
 
 ### Change Log
 
@@ -23,6 +23,7 @@ Grail Seeker addresses this fundamental inefficiency by shifting from "check whe
 |------|---------|-------------|--------|
 | 2025-09-08 | v1.0 | Initial PRD creation from Project Brief | John (PM) |
 | 2025-09-28 | v1.1 | Updated with landing page implementation and timeline changes | Winston (Claude Code) |
+| 2025-09-28 | v1.2 | Updated requirements based on eBay API constraints research | Winston (Claude Code) |
 
 ## Implementation Status Update (v1.1)
 
@@ -106,6 +107,48 @@ Grail Seeker addresses this fundamental inefficiency by shifting from "check whe
 - ✅ **ARCHITECTURAL-DECISIONS.md**: ADR format decision tracking
 - ✅ **DEPLOYMENT.md**: Step-by-step deployment procedures
 
+### eBay API Constraint Adaptations (v1.2)
+
+**Status**: Requirements updated based on comprehensive eBay API research
+**Research Date**: September 2025
+**Impact**: Modified core functional and non-functional requirements
+
+#### Key Requirement Changes Made
+
+**1. Monitoring Frequency Adjustment**
+- **Original**: Every 15 minutes continuous monitoring
+- **Updated**: Twice daily during prime listing windows
+- **Rationale**: Work within eBay's 5,000 daily API call limit while targeting peak listing activity
+
+**2. Notification Timing Relaxation**
+- **Original**: SMS notifications within 2-5 minutes of detection
+- **Updated**: SMS notifications within 30 minutes of detection
+- **Rationale**: Account for twice-daily monitoring schedule and API data freshness delays
+
+**3. Strategic Monitoring Windows**
+- **Implementation**: Target peak eBay listing times (morning and evening)
+- **Benefit**: Maximize opportunity detection within API constraints
+- **User Impact**: Still captures most grail book opportunities with reasonable timing
+
+#### Business Impact Assessment
+
+**Positive Adaptations**:
+✅ Maintains core value proposition of proactive notifications
+✅ Works within eBay's documented API limitations
+✅ Reduces infrastructure costs through fewer API calls
+✅ Targets optimal listing discovery windows
+
+**Acceptable Trade-offs**:
+⚠️ Slightly longer notification delays (30 min vs 2-5 min)
+⚠️ Reduced monitoring frequency but strategic timing
+⚠️ Less real-time immediacy but maintains competitive advantage
+
+**Validation Status**:
+- ✅ Researched and documented in `/docs/research/ebay-api-validation.md`
+- ✅ Technical feasibility confirmed within API constraints
+- ✅ User experience remains significantly better than manual checking
+- ✅ Business model viable with adjusted operational parameters
+
 ## Requirements
 
 ### Functional Requirements
@@ -114,7 +157,7 @@ Grail Seeker addresses this fundamental inefficiency by shifting from "check whe
 
 **FR2:** The system shall continuously monitor eBay marketplace for listings matching user-specified search criteria through automated background processing
 
-**FR3:** The system shall send SMS notifications to users within 2-5 minutes when matching comic books are discovered, including book details and direct listing link for the top result; when multiple matching listings are found simultaneously, the system shall send a second SMS indicating "Multiple copies of [BookTitle] #[Issue#] found" with a link to eBay search results page
+**FR3:** The system shall send SMS notifications to users within 30 minutes when matching comic books are discovered, including book details and direct listing link for the top result; when multiple matching listings are found simultaneously, the system shall send a second SMS indicating "Multiple copies of [BookTitle] #[Issue#] found" with a link to eBay search results page
 
 **FR4:** The system shall support user account registration, authentication, and profile management for saving and modifying wanted book lists
 
@@ -134,7 +177,7 @@ Grail Seeker addresses this fundamental inefficiency by shifting from "check whe
 
 **NFR1:** The system shall maintain 99.5% uptime for monitoring services to ensure consistent opportunity detection
 
-**NFR2:** The system shall process and deliver notifications within 2-5 minutes of new listing detection on monitored platforms
+**NFR2:** The system shall process and deliver notifications within 30 minutes of new listing detection on monitored platforms
 
 **NFR3:** The system shall support concurrent monitoring for up to 500 user accounts during MVP phase
 
@@ -391,10 +434,10 @@ so that **I can validate that automated searching is working correctly**.
 
 1. eBay Finding API integration implemented with authentication and rate limiting
 2. Background job system created using Supabase Edge Functions for scheduled monitoring
-3. **Monitoring frequency implemented as configurable parameter (default: 15 minutes) that can be adjusted without code deployment**
+3. **Monitoring frequency implemented as configurable parameter (default: twice daily during prime listing windows) that can be adjusted without code deployment**
 4. Search query translation from user specifications to eBay API parameters
 5. Basic listing detection and storage for matching comics found
-6. **Monitoring job scheduler respects configurable frequency setting for all user searches**
+6. **Monitoring job scheduler respects twice-daily frequency targeting peak listing activity windows for all user searches**
 7. Search result logging for debugging and system transparency
 8. Error handling and retry logic for failed API calls or network issues
 9. Monitoring status indicators showing last successful check per search
@@ -449,7 +492,7 @@ so that **I can act quickly on time-sensitive opportunities before they're sold*
 
 1. Twilio SMS integration implemented with authentication and delivery tracking
 2. SMS notification templates created for single listing and multiple listing scenarios
-3. Notification delivery within 2-5 minutes of listing detection implemented
+3. Notification delivery within 30 minutes of listing detection implemented
 4. SMS content includes book details, price, grade, and direct eBay listing link
 5. Multiple listing notification implemented: first SMS with top result, second SMS with "Multiple copies found" message and search results link
 6. SMS delivery failure handling implemented with retry logic and error logging
