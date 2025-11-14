@@ -153,6 +153,14 @@
             color: #1a1a1a;
         }
 
+        .browser-instructions {
+            background: #f8f9fa;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
         @media (max-width: 768px) {
             .privacy-container {
                 padding: 80px 16px 40px;
@@ -194,7 +202,6 @@
 
         <div class="privacy-header">
             <h1 class="privacy-title">Privacy Policy</h1>
-            <p class="privacy-meta"><strong>Effective Date:</strong> November 18, 2025</p>
             <p class="privacy-meta"><strong>Last Updated:</strong> November 13, 2025</p>
         </div>
 
@@ -223,10 +230,12 @@
                 <li>Alert history and search management data</li>
             </ul>
 
-            <p><strong>Payment Information (Future):</strong></p>
+            <p><strong>Payment Information:</strong></p>
             <ul>
-                <li>When subscription billing launches, payment information will be processed by Stripe (our payment processor)</li>
+                <li>Payment information is processed by Stripe (our payment processor)</li>
                 <li>We do NOT store credit card numbers or payment details on our servers</li>
+                <li>Stripe receives your billing information to process subscription payments</li>
+                <li>Privacy policy: <a href="https://stripe.com/privacy" target="_blank">https://stripe.com/privacy</a></li>
             </ul>
 
             <h3>1.2 Information Collected Automatically</h3>
@@ -237,10 +246,11 @@
                 <li>Device information (mobile device type, unique device identifiers)</li>
             </ul>
 
-            <p><strong>Cookies and Tracking:</strong></p>
+            <p><strong>Analytics and Cookies:</strong></p>
             <ul>
-                <li>Session cookies for authentication (essential for Service functionality)</li>
-                <li>Analytics cookies to understand usage patterns (can be disabled in browser settings)</li>
+                <li><strong>Essential Cookies:</strong> Session cookies for authentication (required for Service functionality)</li>
+                <li><strong>Analytics Cookies:</strong> Google Analytics to understand usage patterns and improve our Service (can be disabled in browser settings - see Section 8.2 below)</li>
+                <li><strong>Performance Monitoring:</strong> Error tracking and performance analytics to identify and fix issues</li>
             </ul>
 
             <p><strong>We do NOT use:</strong></p>
@@ -266,10 +276,10 @@
             <h3>2.1 To Provide Our Service</h3>
             <ul>
                 <li>Create and manage your account</li>
-                <li>Monitor eBay marketplace for comics matching your search criteria</li>
+                <li>Monitor marketplaces for comics matching your search criteria</li>
                 <li>Send SMS alerts when matching comics are found</li>
                 <li>Deliver weekly email reports on search activity</li>
-                <li>Process your subscription payments (future)</li>
+                <li>Process your subscription payments</li>
             </ul>
 
             <h3>2.2 To Improve Our Service</h3>
@@ -320,12 +330,31 @@
                 <li>Privacy policy: <a href="https://www.twilio.com/legal/privacy" target="_blank">https://www.twilio.com/legal/privacy</a></li>
             </ul>
 
-            <p><strong>eBay (Marketplace Data):</strong></p>
+            <p><strong>Stripe (Payment Processing):</strong></p>
             <ul>
-                <li>We search public eBay listings via Browse API</li>
-                <li>No personal eBay user data is collected or stored</li>
-                <li>Only public listing information accessed</li>
-                <li>Privacy policy: <a href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy" target="_blank">eBay Privacy Policy</a></li>
+                <li>Processes subscription payments and billing information</li>
+                <li>We do NOT store credit card numbers (handled entirely by Stripe)</li>
+                <li>Data location: United States</li>
+                <li>Privacy policy: <a href="https://stripe.com/privacy" target="_blank">https://stripe.com/privacy</a></li>
+            </ul>
+
+            <p><strong>eBay and Other Marketplaces (Public Listing Data):</strong></p>
+            <ul>
+                <li>We search public marketplace listings via their APIs</li>
+                <li><strong>We do NOT share your personal information with eBay or other marketplaces</strong></li>
+                <li>We do NOT send your name, email, phone number, or search preferences to these platforms</li>
+                <li>Only public listing information is accessed (titles, prices, grades, images)</li>
+                <li>When you click affiliate links in our alerts, standard web tracking applies (the marketplace may log your IP address and browser information per their privacy policy)</li>
+                <li>eBay Privacy Policy: <a href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy" target="_blank">eBay Privacy Policy</a></li>
+            </ul>
+
+            <p><strong>Google Analytics (Usage Analytics):</strong></p>
+            <ul>
+                <li>Tracks aggregate usage patterns to improve our Service</li>
+                <li>We use Google Analytics in privacy-focused mode (anonymized IP addresses)</li>
+                <li>No personally identifiable information sent to Google</li>
+                <li>You can opt-out via browser settings (see Section 8.2 below)</li>
+                <li>Privacy policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
             </ul>
 
             <h3>3.2 Legal Requirements</h3>
@@ -342,16 +371,16 @@
 
             <h3>4.1 How Long We Keep Your Data</h3>
             <p><strong>User Accounts:</strong> Retained until you delete your account. When you delete your account, all associated data is permanently deleted within 30 days.</p>
-            <p><strong>Alert History:</strong> Retained indefinitely while your account is active. Provides complete history of opportunities found. Deleted when you delete your account.</p>
+            <p><strong>Alert History:</strong> Retained indefinitely while your account is active. Provides complete history of opportunities found since account creation. All alert history deleted when you delete your account.</p>
             <p><strong>Server Logs:</strong> Retained for 30 days, then automatically rotated. Used for debugging and security monitoring.</p>
-            <p><strong>eBay Listing Data:</strong> We do NOT store full eBay listing content. Only alert metadata stored (comic title, price, grade, item ID, timestamp).</p>
+            <p><strong>Marketplace Listing Data:</strong> We do NOT store full marketplace listing content. Only alert metadata stored (comic title, price, grade, item ID, timestamp, marketplace source).</p>
 
             <h3>4.2 Your Right to Delete</h3>
-            <p>You may delete your account at any time through account settings. Upon deletion:</p>
+            <p>You can delete your account at any time through account settings. Upon deletion:</p>
             <ul>
                 <li>Your account will be deactivated immediately</li>
                 <li>All personal data will be permanently deleted within 30 days</li>
-                <li>Some data may be retained in backups for up to 90 days (security purposes)</li>
+                <li>Some data may be retained in backups for up to 90 days (security and recovery purposes)</li>
                 <li>Anonymized usage statistics may be retained for analytics</li>
             </ul>
 
@@ -362,19 +391,31 @@
             <ul>
                 <li><strong>Access:</strong> View all personal data we hold about you (available through account settings dashboard)</li>
                 <li><strong>Correction:</strong> Update inaccurate or incomplete personal information (edit via account settings or contact support)</li>
-                <li><strong>Deletion:</strong> Request deletion of your account and all associated data</li>
-                <li><strong>Portability:</strong> Receive a copy of your data in machine-readable format (JSON)</li>
+                <li><strong>Deletion:</strong> Delete your account and all associated data at any time (self-service via account settings)</li>
+                <li><strong>Portability:</strong> Receive a copy of your data in machine-readable format (JSON export available upon request - email support@grailseeker.io)</li>
                 <li><strong>Objection:</strong> Opt out of non-essential communications</li>
             </ul>
 
             <h3>5.2 GDPR Rights (European Users)</h3>
             <p>If you are located in the European Economic Area (EEA), UK, or Switzerland, you have additional rights under GDPR:</p>
 
+            <p><strong>Your Specific GDPR Rights:</strong></p>
+            <ul>
+                <li><strong>Right to Access (Article 15):</strong> Obtain confirmation of whether we process your data and access to that data</li>
+                <li><strong>Right to Rectification (Article 16):</strong> Correct inaccurate personal data</li>
+                <li><strong>Right to Erasure/"Right to be Forgotten" (Article 17):</strong> Request deletion of your personal data</li>
+                <li><strong>Right to Restriction of Processing (Article 18):</strong> Limit how we use your data</li>
+                <li><strong>Right to Data Portability (Article 20):</strong> Receive your data in structured, machine-readable format</li>
+                <li><strong>Right to Object (Article 21):</strong> Object to processing based on legitimate interests</li>
+                <li><strong>Right to Withdraw Consent (Article 7):</strong> Withdraw consent for SMS/email communications at any time</li>
+                <li><strong>Right to Lodge a Complaint:</strong> File complaint with your local Data Protection Authority</li>
+            </ul>
+
             <p><strong>Legal Basis for Processing:</strong></p>
             <ul>
-                <li>Contract: We process data necessary to provide our Service (Article 6(1)(b))</li>
-                <li>Consent: You provide consent for SMS notifications and email reports (Article 6(1)(a))</li>
-                <li>Legitimate Interests: We process data for Service improvement and security (Article 6(1)(f))</li>
+                <li><strong>Contract (Article 6(1)(b)):</strong> We process data necessary to provide our Service</li>
+                <li><strong>Consent (Article 6(1)(a)):</strong> You provide consent for SMS notifications and email reports</li>
+                <li><strong>Legitimate Interests (Article 6(1)(f)):</strong> We process data for Service improvement and security</li>
             </ul>
 
             <p><strong>To Exercise GDPR Rights:</strong><br>
@@ -385,12 +426,22 @@
             <h3>5.3 CCPA/CPRA Rights (California Users)</h3>
             <p>If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA):</p>
 
+            <p><strong>Your Specific CCPA/CPRA Rights:</strong></p>
+            <ul>
+                <li><strong>Right to Know:</strong> Request details about personal information we collect, use, disclose, and sell</li>
+                <li><strong>Right to Delete:</strong> Request deletion of your personal information (with limited exceptions)</li>
+                <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information</li>
+                <li><strong>Right to Opt-Out:</strong> Opt out of sale/sharing of personal information (note: we do NOT sell your data)</li>
+                <li><strong>Right to Limit Sensitive Data Use:</strong> Limit use of sensitive personal information</li>
+                <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your rights</li>
+            </ul>
+
             <p><strong>Categories of Personal Information We Collect (CCPA):</strong></p>
             <ul>
-                <li>Identifiers (email, phone number)</li>
-                <li>Commercial information (search preferences, subscription status)</li>
-                <li>Internet activity (usage logs, IP addresses)</li>
-                <li>Inferences (derived from search patterns for Service improvement)</li>
+                <li><strong>Identifiers:</strong> Email, phone number, IP address</li>
+                <li><strong>Commercial Information:</strong> Search preferences, subscription status, purchase history</li>
+                <li><strong>Internet Activity:</strong> Usage logs, pages visited, browser information</li>
+                <li><strong>Inferences:</strong> Derived from search patterns for Service improvement only</li>
             </ul>
 
             <div class="highlight-box">
@@ -458,9 +509,9 @@
 
             <p><strong>Analytics Cookies (Optional):</strong></p>
             <ul>
-                <li>Usage patterns and feature adoption tracking</li>
-                <li>Performance monitoring and error detection</li>
-                <li>Can be disabled in browser settings</li>
+                <li>Google Analytics: Usage patterns and feature adoption tracking</li>
+                <li>Performance monitoring: Error detection and Service reliability</li>
+                <li>Can be disabled in browser settings (see Section 8.2 below)</li>
             </ul>
 
             <p><strong>We do NOT use:</strong></p>
@@ -470,6 +521,45 @@
                 <li>❌ Third-party behavioral tracking</li>
                 <li>❌ Cross-site tracking cookies</li>
             </ul>
+
+            <h3>8.2 How to Disable Analytics and Performance Monitoring Cookies</h3>
+            <p>You can disable optional analytics cookies through your browser settings:</p>
+
+            <div class="browser-instructions">
+                <p><strong>Google Chrome:</strong></p>
+                <ol>
+                    <li>Click the three-dot menu (⋮) → Settings</li>
+                    <li>Navigate to Privacy and security → Cookies and other site data</li>
+                    <li>Select "Block third-party cookies" or "Block all cookies"</li>
+                    <li>Note: Blocking all cookies will disable authentication</li>
+                </ol>
+
+                <p><strong>Mozilla Firefox:</strong></p>
+                <ol>
+                    <li>Click the menu button (☰) → Settings</li>
+                    <li>Select Privacy & Security</li>
+                    <li>Under Enhanced Tracking Protection, choose "Strict"</li>
+                    <li>Or click "Manage Exceptions" to block specific sites</li>
+                </ol>
+
+                <p><strong>Safari (macOS):</strong></p>
+                <ol>
+                    <li>Safari → Preferences → Privacy</li>
+                    <li>Check "Prevent cross-site tracking"</li>
+                    <li>Or select "Block all cookies" (will disable authentication)</li>
+                </ol>
+
+                <p><strong>Microsoft Edge:</strong></p>
+                <ol>
+                    <li>Click the three-dot menu (⋯) → Settings</li>
+                    <li>Navigate to Privacy, search, and services</li>
+                    <li>Under Tracking prevention, select "Strict"</li>
+                    <li>Or toggle "Block third-party cookies"</li>
+                </ol>
+
+                <p><strong>Google Analytics Opt-Out:</strong><br>
+                Install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a> to prevent your data from being used by Google Analytics across all websites.</p>
+            </div>
 
             <h2 id="international-users">9. International Users</h2>
             <p><strong>Data Processing Location:</strong> Our servers are located in the United States. Your data may be transferred to and processed in the United States.</p>
@@ -519,8 +609,9 @@
             <div class="summary-box">
                 <h3>Summary (Plain Language)</h3>
                 <p><strong>What we collect:</strong> Email, phone number, comic search preferences</p>
-                <p><strong>Why we collect it:</strong> To send you SMS alerts when your grail comics are found on eBay</p>
-                <p><strong>Who we share with:</strong> Supabase (database), Twilio (SMS), eBay (search listings), Stripe (future payments)</p>
+                <p><strong>Why we collect it:</strong> To send you SMS alerts when your grail comics are found on one of our marketplaces</p>
+                <p><strong>Who we share with:</strong> Supabase (database), Twilio (SMS), Stripe (payments), Google Analytics (usage stats)</p>
+                <p><strong>Who we DON'T share with:</strong> We do NOT share your personal information with eBay or other marketplaces</p>
                 <p><strong>Your rights:</strong> View, edit, export, or delete your data anytime</p>
                 <p><strong>We do NOT:</strong> Sell your data, track you across websites, or spam you</p>
                 <p><strong>Questions?</strong> Email <a href="mailto:support@grailseeker.io">support@grailseeker.io</a></p>
@@ -537,6 +628,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>1.1</td>
+                            <td>November 13, 2025</td>
+                            <td>Updated to include Stripe payments, Google Analytics disclosure, detailed GDPR/CCPA rights enumeration, cookie management instructions, marketplace data sharing clarification</td>
+                        </tr>
                         <tr>
                             <td>1.0</td>
                             <td>November 18, 2025</td>
