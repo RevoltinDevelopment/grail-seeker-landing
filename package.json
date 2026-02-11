@@ -16,6 +16,9 @@
   ],
   "author": "Grail Seeker",
   "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=16.0.0"

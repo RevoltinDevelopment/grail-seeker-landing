@@ -92,16 +92,19 @@ async function handleEarlyAccessSubmit(e) {
     setButtonLoading(submitButton, true);
 
     try {
-        // Submit to Netlify Forms (or your preferred service)
-        const formData = new FormData(form);
-
-        const response = await fetch('/', {
+        // Submit to our API endpoint
+        const response = await fetch('/api/waitlist', {
             method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: email,
+                collecting_focus: collectingFocus || null
+            })
         });
 
-        if (response.ok) {
+        const data = await response.json();
+
+        if (response.ok && data.success) {
             // Track successful signup
             trackEvent('early_access_signup', {
                 email: email,
@@ -109,12 +112,12 @@ async function handleEarlyAccessSubmit(e) {
             });
 
             // Show success modal
-            showSuccessModal('Thank you for joining our waitlist! We\'ll be in touch soon with beta testing details.');
+            showSuccessModal(data.message || 'Thank you for joining our waitlist! We\'ll be in touch soon with beta testing details.');
 
             // Reset form
             form.reset();
         } else {
-            throw new Error('Submission failed');
+            throw new Error(data.error || 'Submission failed');
         }
     } catch (error) {
         console.error('Form submission error:', error);
