@@ -140,6 +140,12 @@ async function handleContactSubmit(e) {
     const submitButton = form.querySelector('button[type="submit"]');
     const formData = new FormData(form);
 
+    // Honeypot: if this hidden field was filled in, silently drop the submission
+    if (formData.get('bot-field')) {
+        form.reset();
+        return;
+    }
+
     // Validate required fields
     const requiredFields = ['name', 'email', 'subject', 'message'];
     let isValid = true;
@@ -165,13 +171,20 @@ async function handleContactSubmit(e) {
     setButtonLoading(submitButton, true);
 
     try {
-        const response = await fetch('/', {
+        const response = await fetch('/api/contact', {
             method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            })
         });
 
-        if (response.ok) {
+        const data = await response.json();
+
+        if (response.ok && data.success) {
             // Track contact form submission
             trackEvent('contact_form_submit', {
                 subject: formData.get('subject')
@@ -183,7 +196,7 @@ async function handleContactSubmit(e) {
             // Reset form
             form.reset();
         } else {
-            throw new Error('Submission failed');
+            throw new Error(data.error || 'Submission failed');
         }
     } catch (error) {
         console.error('Contact form error:', error);
@@ -360,30 +373,6 @@ function initScrollEffects() {
     animatedElements.forEach(element => {
         observer.observe(element);
     });
-
-    // Parallax effect for hero section (subtle)
-    let ticking = false;
-
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const heroElement = document.querySelector('.hero');
-
-        if (heroElement && scrolled < window.innerHeight) {
-            const speed = scrolled * 0.5;
-            heroElement.style.transform = `translateY(${speed}px)`;
-        }
-
-        ticking = false;
-    }
-
-    function requestParallax() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    }
-
-    window.addEventListener('scroll', requestParallax);
 }
 
 // Analytics and tracking

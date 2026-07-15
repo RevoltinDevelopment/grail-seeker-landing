@@ -1,14 +1,39 @@
 const { createClient } = require('@supabase/supabase-js');
+const { Resend } = require('resend');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_KEY
 );
 
+const NOTIFICATION_EMAIL = 'grailseekerhq@gmail.com';
+
 // Simple email validation
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+}
+
+async function notifyWaitlistSignup(email, collecting_focus) {
+  try {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY is not configured');
+    }
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    await resend.emails.send({
+      from: 'Grail Seeker <onboarding@resend.dev>',
+      to: NOTIFICATION_EMAIL,
+      subject: `[Grail Seeker Waitlist] New signup: ${email}`,
+      html: `
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>What they collect:</strong> ${collecting_focus || '(not specified)'}</p>
+      `
+    });
+  } catch (error) {
+    // Never let an email failure block the signup itself — the row is already
+    // saved in Supabase and is the source of truth.
+    console.error('Waitlist notification email failed:', error);
+  }
 }
 
 module.exports = async function handler(req, res) {
@@ -64,6 +89,8 @@ module.exports = async function handler(req, res) {
       console.error('Supabase error:', error);
       return res.status(500).json({ error: 'Failed to save signup' });
     }
+
+    await notifyWaitlistSignup(email.toLowerCase().trim(), collecting_focus);
 
     return res.status(200).json({
       success: true,
